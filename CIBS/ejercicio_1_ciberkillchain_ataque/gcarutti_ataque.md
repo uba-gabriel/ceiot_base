@@ -1,9 +1,9 @@
 ALUMNO: Carutti, Gabriel Augusto
 
 
-DESCRIPCION DEL TRABAJO FINAL: La realización de un módulo compatible con una plataforma de desarrollo IoT similar a Node-RED, para almacenamiento, procesamiento y accesibilidad a sus datos en la nube.
-Básicamente el trabajo consiste en suscribir a los mensajes MQTT generados desde la plataforma con un servidor que los pueda insertar en una base de datos en la nube. También se incluye el desarrollo de un sitio en la nube que permite la visualización de la información recabada de esos dispositivos. 
-Entre los detalles que interesan para el ataque se destaca que la identificación de los dispositivos de la plataforma será a través de un correo electrónico por cada cliente.
+DESCRIPCIÓN DEL TRABAJO FINAL: Módulo compatible con una plataforma de desarrollo IoT similar a Node-RED, para almacenamiento, procesamiento y accesibilidad a sus datos en la nube.
+Consiste en la suscripción desde un servidor a los mensajes MQTT generados desde la plataforma y la inserción de la información en una base de datos en la nube. Incluye un sitio web disponible para los clientes que permite la visualización ordenada de la información almacenada. 
+Entre los detalles que interesan para el ataque se destaca que la identificación de los dispositivos de la plataforma es a través de un correo electrónico por cada cliente.
 
 OBJETIVO DEL ATAQUE
 ===================
