@@ -25,7 +25,7 @@ T1087	 - Descubrimiento de cuenta
 
 .003	Cuenta de correo electrónico
 
-Se recopilan direcciones de correo electrónico de los clientes que pueden estar expuestos de la plataforma y desde las web de las empresas de los clientes.
+Se recopilan direcciones de correo electrónico de los clientes que pueden estar expuestos en la plataforma y desde las web de las empresas de los clientes.
 
 WEAPONIZATION
 =============
