@@ -19,53 +19,62 @@ DEFENSA
 RECONNAISSANCE
 ==============
 
-T1589	 - Reúna información de identidad de la víctima	
+El atacante buscará recopilar direcciones de correo electrónico de los clientes expuestos en la plataforma y desde las web de las empresas de los clientes.
 
-.002	- Correos electrónicos
+Disuasivo - Contrato
 
-T1087	 - Descubrimiento de cuenta
-
-.003	Cuenta de correo electrónico
-
-Se buscará recopilar direcciones de correo electrónico de los clientes expuestos en la plataforma y desde las web de las empresas de los clientes.
+Se realiza un contrato con los clientes donde se obliga a los mismos a no publicar ni suministrar bajo ningún caso las direcciones de correo electrónico que utilizan para conectarse a la plataforma.
 
 WEAPONIZATION
 =============
 
-T1204 - Ejecución de usuario sometidos a ingeniería social.
-Formas de phishing.
- 
-.001	- Enlace malicioso
+El atacante buscará armar un enlace malicioso en forma de phishing.
 
-Preparo un archivo que al ejecutarse se replique y corra en segundo plano preparando múltiples tareas a correr simultáneas en horarios nocturnos.
+Disuasivo - Contrato
 
-Preparo un correo electrónico que en el lugar de "reply" lleve el correo de la plataforma, y en "subject" un mensaje corto y conciso simulando ser la empresa proveedora que requiere una actualización de seguridad. En el "body" envío una imagen de la empresa proveedora y un enlace a una descarga del archivo para actualizar la seguridad del sistema con las instrucciones y la firma de los titulares de la empresa proveedora.
+En el mismo contrato con los clientes también se les informa que de ninguna forma la plataforma intentará contactarlos por correo electrónico ni tampoco enviarles ninguna actualización ni archivo que deban ejecutar por cualquier motivo.
 
 DELIVERY
 ========
 
-Envío el correo electrónico a los clientes con la configuración descripta en el paso anterior.
+El atacante envía el correo electrónico a los clientes con la configuración maliciosa.
+
+Disuasivo - Políticas
+
+Se expone en las políticas de la plataforma una advertencia que diga que quienes intenten perjudicar la información provista por los clientes o ejecuten cualquier ataque hacia los mismos o la plataforma serán demandados y llevados a la justicia en la juridiscción de la plataforma.
 
 EXPLOITATION
 ============
 
-El archivo se descarga por el usuario destino permitiendo que pase a través de las medidas de seguridad del sistema pensando que se trata de un parche de seguridad.
+El cliente intenta descargar el archivo pensando que se trata de un parche de seguridad.
+
+Preventivo - Antivirus
+
+Se suministra a los clientes un programa Antivirus que detecte la descarga de archivos ejecutables potencialmente maliciosos.
 
 INSTALLATION
 ============
 
-El archivo se instala por el usuario pasando por el Firewall y  con privilegios de administrador pensando que se trata de un parche de seguridad.
+El cliente instala el archivo pensando que se trata de un parche de seguridad.
+
+Preventivo - Antivirus
+
+Se suministra a los clientes un programa Antivirus que detecte la instalación de archivos que intenten abrir un shell para ejecutar scripts en segundo plano. 
 
 COMMAND & CONTROL
 =================
 
-Se ejecuta en segundo plano como si fuese una actualización de seguridad.
+El cliente ejecuta el archivo y este abre un shell para correr en segundo plano.
+
+Detectivo/Preventivo - IDS/IPS
+
+Se suministra una aplicación a los clientes que detecte y prevenga el tráfico de datos sospechoso relacionado al protolo MQTT que no lleve las firmas adecuadas.
 
 ACTIONS & OBJECTIVES
 ====================
 
-T1491 - Desfiguración	
-Enviar mensajes, intimidación y reclamación de crédito mediante Desfiguración causando incomodidad al usuario.
+Comienzan los ataques en segundo plano y se envían datos erróneos en mensajes MQTT, logrando que los reportes diarios sean inservibles.
 
-Al lanzarse los ataques desde segundo plano en los momentos predefinidos, se comienzan a enviar datos erróneos en mensajes MQTT volcando en la base de datos información basura de sus sensores, logrando que los reportes diarios sean inservibles.
-Al corromper la información provista por los dispositivos se pueden provocar pérdidas financieras en los clientes por lo que se espera tener éxito en el corto plazo con la demanda de Bitcoin's.
+Recovery - Backup
+
+Desde la plataforma se suspende momentáneamente la cuenta del cliente y se recupera la información desde el backup diario con fecha del día anterior al evento del ataque. Se asesora al cliente para que realice una recuperación desde una imagen de su sistema con fecha previa al evento de descarga e instalación.
