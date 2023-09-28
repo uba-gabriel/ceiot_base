@@ -4,77 +4,84 @@
 
 ALUMNO: Carutti, Gabriel Augusto
 
-## Enunciado
-
-Desarrollar la defensa en función del ataque planteado en orden inverso. No es una respuesta a un incidente, hay que detectar el ataque independientemente de la etapa.
-
-Para cada etapa elegir una sola defensa, la más importante, considerar recursos limitados.
 
 ## Resolución
 
 DEFENSA
 =======
 
+ACTIONS & OBJECTIVES
+====================
 
-RECONNAISSANCE
-==============
+Escenario: Máquina virtual de criptominería corriendo como un servicio en la máquina infectada.
 
-El atacante buscará recopilar direcciones de correo electrónico de los clientes expuestos en la plataforma y desde las web de las empresas de los clientes.
+Contramedidas: 
 
-Disuasivo - Contrato
+Recuperación - Backup
 
-Se realiza un contrato con los clientes donde se obliga a los mismos a no publicar ni suministrar bajo ningún caso las direcciones de correo electrónico que utilizan para conectarse a la plataforma.
+Desde la plataforma se suspende momentáneamente la cuenta del cliente y se recupera la información desde el backup diario con fecha del día anterior al evento conocido del ataque. Se asesora al cliente para que realice una recuperación desde una imagen de su sistema con fecha previa al evento de descarga e instalación del malware.
 
-WEAPONIZATION
-=============
+COMMAND & CONTROL
+=================
 
-El atacante buscará armar un enlace malicioso en forma de phishing.
+Escenario: No hay actividad ni control remotos.
 
-Disuasivo - Contrato
+Contramedidas: 
 
-En el mismo contrato con los clientes también se les informa que de ninguna forma la plataforma intentará contactarlos por correo electrónico ni tampoco enviarles ninguna actualización ni archivo que deban ejecutar por cualquier motivo.
+-
 
-DELIVERY
-========
+INSTALLATION
+============
 
-El atacante envía el correo electrónico a los clientes con la configuración maliciosa.
+Escenario: El cliente instala el archivo pensando que se trata de un parche de seguridad.
 
-Disuasivo - Políticas
+Contramedidas: 
 
-Se expone en las políticas de la plataforma una advertencia que diga que quienes intenten perjudicar la información provista por los clientes o ejecuten cualquier ataque hacia los mismos o la plataforma serán demandados y llevados a la justicia en la juridiscción de la plataforma.
+Detectivo/Preventivo - IDS/IPS
+
+Se suministra una aplicación a los clientes que detecte y prevenga el tráfico de datos sospechoso relacionado a la criptominería.
 
 EXPLOITATION
 ============
 
-El cliente intenta descargar el archivo pensando que se trata de un parche de seguridad.
+Escenario: El cliente intenta descargar el archivo pensando que se trata de un parche de seguridad.
+
+Contramedidas: 
 
 Preventivo - Antivirus
 
 Se suministra a los clientes un programa Antivirus que detecte la descarga de archivos ejecutables potencialmente maliciosos.
 
-INSTALLATION
-============
+DELIVERY
+========
 
-El cliente instala el archivo pensando que se trata de un parche de seguridad.
+Escenario: El cliente recibe el correo electrónico con la configuración maliciosa.
 
-Preventivo - Antivirus
+Contramedidas: 
 
-Se suministra a los clientes un programa Antivirus que detecte la instalación de archivos que intenten abrir un shell para ejecutar scripts en segundo plano. 
+Preventivo - Advertencias
 
-COMMAND & CONTROL
-=================
+Se emite un dossier preventivo de advertencias para los clientes donde se les informa que de ninguna forma la empresa intentará que sus clientes descarguen ni ingresen a un enlace por correo electrónico como tampoco enviarles actualizaciones por ese medio.
 
-El cliente ejecuta el archivo y este abre un shell para correr en segundo plano.
+WEAPONIZATION
+=============
 
-Detectivo/Preventivo - IDS/IPS
+Escenario: El atacante arma un enlace malicioso para ser utilizado con tácticas de ingeniería social.
 
-Se suministra una aplicación a los clientes que detecte y prevenga el tráfico de datos sospechoso relacionado al protolo MQTT que no lleve las firmas adecuadas.
+Contramedidas: 
 
-ACTIONS & OBJECTIVES
-====================
+Disuasivo - Políticas
 
-Comienzan los ataques en segundo plano y se envían datos erróneos en mensajes MQTT, logrando que los reportes diarios sean inservibles.
+Se expone en las políticas de la plataforma una advertencia que diga que quienes intenten perjudicar las cuentas de los clientes, ejecutar cualquier ataque hacia los mismos o la plataforma serán llevados a la justicia en la juridiscción de la plataforma.
 
-Recovery - Backup
+RECONNAISSANCE
+==============
 
-Desde la plataforma se suspende momentáneamente la cuenta del cliente y se recupera la información desde el backup diario con fecha del día anterior al evento del ataque. Se asesora al cliente para que realice una recuperación desde una imagen de su sistema con fecha previa al evento de descarga e instalación.
+Escenario: El atacante busca recopilar direcciones de correo electrónico de los clientes expuestos en la plataforma y desde las web de las empresas de los clientes.
+
+Contramedidas: 
+
+Preventivo - Advertencias
+
+En el contrato a los clientes se les recomienda fuertemente que no publiquen ni suministren las direcciones de correo electrónico que utilizan de enlace con la plataforma.
+

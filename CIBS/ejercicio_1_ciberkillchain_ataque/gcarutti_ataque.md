@@ -1,3 +1,7 @@
+# Ejercicio CiberKillChain - Ataque
+
+## Alumno
+
 ALUMNO: Carutti, Gabriel Augusto
 
 
@@ -7,7 +11,7 @@ Entre los detalles que interesan para el ataque se destaca que la identificació
 
 OBJETIVO DEL ATAQUE
 ===================
-Lograr que es destinatario del ataque transfiera 2 Bitcoin's a mi billetera de criptomonedas. 
+Minar Bitcoin's desde las terminales de los clientes de la plataforma. 
 
 ATAQUE
 ======
@@ -17,15 +21,15 @@ ATAQUE
 RECONNAISSANCE
 ==============
 
-T1589	 - Reúna información de identidad de la víctima	
+T1589	 - Reúna información de identidad de la víctima.	
 
-.002	- Correos electrónicos
+.002	- [Correos electrónicos](https://attack.mitre.org/techniques/T1589/002/)
 
-T1087	 - Descubrimiento de cuenta
+T1087	 - Descubrimiento de cuenta.
 
-.003	Cuenta de correo electrónico
+.003	- [Cuenta de correo electrónico](https://attack.mitre.org/techniques/T1087/003/)
 
-Se buscará recopilar direcciones de correo electrónico de los clientes expuestos en la plataforma y desde las web de las empresas de los clientes.
+Se buscará recopilar direcciones de correo electrónico de los clientes expuestos en la plataforma y desde las web de las empresas de los clientes que también se puedan identificar en la plataforma.
 
 WEAPONIZATION
 =============
@@ -33,9 +37,9 @@ WEAPONIZATION
 T1204 - Ejecución de usuario sometidos a ingeniería social.
 Formas de phishing.
  
-.001	- Enlace malicioso
+.002	- [Archivo malicioso](https://attack.mitre.org/techniques/T1204/002/)
 
-Preparo un archivo que al ejecutarse se replique y corra en segundo plano preparando múltiples tareas a correr simultáneas en horarios nocturnos.
+Preparo un archivo malware de tipo "trojano" que al ejecutarse configure en segundo plano un servicio de maquina virtual de criptominería programada para trabajar en horarios nocturnos.
 
 Preparo un correo electrónico que en el lugar de "reply" lleve el correo de la plataforma, y en "subject" un mensaje corto y conciso simulando ser la empresa proveedora que requiere una actualización de seguridad. En el "body" envío una imagen de la empresa proveedora y un enlace a una descarga del archivo para actualizar la seguridad del sistema con las instrucciones y la firma de los titulares de la empresa proveedora.
 
@@ -47,23 +51,26 @@ Envío el correo electrónico a los clientes con la configuración descripta en 
 EXPLOITATION
 ============
 
-El archivo se descarga por el usuario destino permitiendo que pase a través de las medidas de seguridad del sistema pensando que se trata de un parche de seguridad.
+El archivo se descarga por el cliente, permitiendo que pase a través de las medidas de seguridad del sistema pensando que se trata de un parche de seguridad.
 
 INSTALLATION
 ============
 
-El archivo se instala por el usuario pasando por el Firewall y  con privilegios de administrador pensando que se trata de un parche de seguridad.
+El archivo se instala por el cliente con privilegios de administrador pensando que se trata de un parche de seguridad.
 
 COMMAND & CONTROL
 =================
 
-Se ejecuta en segundo plano como si fuese una actualización de seguridad.
+No corresponde ya que queda corriendo en segundo plano de forma predeterminada y no se controla.
 
 ACTIONS & OBJECTIVES
 ====================
 
-T1491 - Desfiguración	
-Enviar mensajes, intimidación y reclamación de crédito mediante Desfiguración causando incomodidad al usuario.
+T1569 - Servicios del sistema.
 
-Al lanzarse los ataques desde segundo plano en los momentos predefinidos, se comienzan a enviar datos erróneos en mensajes MQTT volcando en la base de datos información basura de sus sensores, logrando que los reportes diarios sean inservibles.
-Al corromper la información provista por los dispositivos se pueden provocar pérdidas financieras en los clientes por lo que se espera tener éxito en el corto plazo con la demanda de Bitcoin's.
+.002	- [Ejecución del servicio](https://attack.mitre.org/techniques/T1569/002/)
+
+Se inicia una máquina virtual de criptominería como un servicio en la máquina infectada.
+
+Se vuelcan los procesos de minería de Bitcoin's en memoria desde la maquina virtual corriendo como un servicio en la terminal del cliente.
+Al lanzarse los ataques desde segundo plano y programados para impactar en horarios nocturnos predefinidos, se espera que no sean detectados por los clientes como actividades sospechosas del sistema.
