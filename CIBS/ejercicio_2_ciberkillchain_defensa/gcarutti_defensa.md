@@ -19,7 +19,7 @@ Contramedidas:
 
 Recuperación - Backup
 
-Desde la plataforma se suspende momentáneamente la cuenta del cliente y se recupera la información desde el backup diario con fecha del día anterior al evento conocido del ataque. Se asesora al cliente para que realice una recuperación desde una imagen de su sistema con fecha previa al evento de descarga e instalación del malware.
+Desde la plataforma se suspende momentáneamente la cuenta del cliente y se recupera la información desde el backup diario con fecha del día anterior al evento conocido del ataque, de forma preventiva. Se asesora al cliente para que realice una recuperación desde una imagen de su sistema con fecha previa al evento de descarga e instalación del malware.
 
 COMMAND & CONTROL
 =================
