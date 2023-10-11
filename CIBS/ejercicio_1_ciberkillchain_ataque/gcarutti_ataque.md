@@ -43,7 +43,7 @@ Preparo un archivo malware de tipo "trojano" que al ejecutarse configure en segu
 
 .003	- [Crear o modificar servicio del sistema](https://attack.mitre.org/techniques/T1543/003/)
 
-Sistema de ataque similar a Loudminer.
+Sistema de ataque similar a [Loudminer](https://attack.mitre.org/software/S0451/)
 LoudMiner inicia automáticamente una máquina virtual Linux como un servicio al inicio si la opción AutoStart está habilitada en el archivo de configuración VBoxVmService.
 
 Preparo un correo electrónico que en el lugar de "reply" lleve el correo de la plataforma, y en "subject" un mensaje corto y conciso simulando ser la empresa proveedora que requiere una actualización de seguridad. En el "body" envío una imagen de la empresa proveedora y un enlace a una descarga del archivo para actualizar la seguridad del sistema con las instrucciones y la firma de los titulares de la empresa proveedora.
