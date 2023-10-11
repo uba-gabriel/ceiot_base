@@ -41,9 +41,10 @@ Formas de phishing.
 
 Preparo un archivo malware de tipo "trojano" que al ejecutarse configure en segundo plano un servicio de maquina virtual de criptominería programada para trabajar en horarios nocturnos.
 
-.003	- [Archivo malicioso](https://attack.mitre.org/techniques/T1543/003/)
+.003	- [Crear o modificar servicio del sistema](https://attack.mitre.org/techniques/T1543/003/)
 
 Sistema de ataque similar a Loudminer.
+LoudMiner inicia automáticamente una máquina virtual Linux como un servicio al inicio si la opción AutoStart está habilitada en el archivo de configuración VBoxVmService.
 
 Preparo un correo electrónico que en el lugar de "reply" lleve el correo de la plataforma, y en "subject" un mensaje corto y conciso simulando ser la empresa proveedora que requiere una actualización de seguridad. En el "body" envío una imagen de la empresa proveedora y un enlace a una descarga del archivo para actualizar la seguridad del sistema con las instrucciones y la firma de los titulares de la empresa proveedora.
 

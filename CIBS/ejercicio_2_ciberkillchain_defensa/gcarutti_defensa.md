@@ -48,9 +48,9 @@ Escenario: El cliente intenta descargar el archivo pensando que se trata de un p
 
 Contramedidas: 
 
-Preventivo - Antivirus
+Preventivo - Configuración
 
-Se suministra a los clientes un programa Antivirus que detecte la descarga de archivos ejecutables potencialmente maliciosos.
+Se les instruye a los clientes para que tengan la opción AutoStart deshabilitada en el archivo de configuración VBoxVmService.
 
 DELIVERY
 ========
